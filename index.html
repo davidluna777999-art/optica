@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica Gestión</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">Ó</div>
+
+            <div>
+                <h2>Óptica Gestión</h2>
+                <span>Sistema administrativo</span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="#dashboard" class="active">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="#clientes">
+                <span>♙</span>
+                Clientes
+            </a>
+
+            <a href="#productos">
+                <span>◈</span>
+                Productos
+            </a>
+
+            <a href="#ventas">
+                <span>▤</span>
+                Ventas
+            </a>
+
+            <a href="#ordenes">
+                <span>◷</span>
+                Órdenes
+            </a>
+
+            <a href="#inventario">
+                <span>▥</span>
+                Inventario
+            </a>
+
+            <a href="#citas">
+                <span>◫</span>
+                Citas
+            </a>
+
+            <a href="#proveedores">
+                <span>⌂</span>
+                Proveedores
+            </a>
+
+            <a href="#historias">
+                <span>♡</span>
+                Historias ópticas
+            </a>
+
+        </nav>
+
+        <div class="usuario">
+
+            <div class="avatar">
+                AD
+            </div>
+
+            <div>
+                <strong>Administrador</strong>
+                <span>Sesión activa</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <span class="mini-title">
+                    PANEL ADMINISTRATIVO
+                </span>
+
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="header-buttons">
+
+                <button class="notification">
+                    🔔
+                    <span>3</span>
+                </button>
+
+                <button class="profile">
+                    Administrador ▾
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="content">
+
+            <!-- BIENVENIDA -->
+            <div class="welcome">
+
+                <div>
+
+                    <span class="mini-title">
+                        ÓPTICA GESTIÓN
+                    </span>
+
+                    <h2>
+                        ¡Bienvenido al sistema!
+                    </h2>
+
+                    <p>
+                        Administra clientes, productos, ventas,
+                        inventario y órdenes desde un solo lugar.
+                    </p>
+
+                </div>
+
+                <a href="#clientes" class="btn-primary">
+                    + Nuevo cliente
+                </a>
+
+            </div>
+
+
+            <!-- ESTADÍSTICAS -->
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-icon blue">
+                        ♙
+                    </div>
+
+                    <div>
+                        <span>Clientes</span>
+                        <strong>248</strong>
+                        <small>+12 este mes</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon green">
+                        ▤
+                    </div>
+
+                    <div>
+                        <span>Ventas</span>
+                        <strong>$8.450.000</strong>
+                        <small>+8,4% este mes</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon orange">
+                        ◷
+                    </div>
+
+                    <div>
+                        <span>Órdenes pendientes</span>
+                        <strong>17</strong>
+                        <small>5 listas para entrega</small>
+                    </div>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <div class="stat-icon red">
+                        !
+                    </div>
+
+                    <div>
+                        <span>Stock bajo</span>
+                        <strong>9</strong>
+                        <small>Productos por revisar</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COLUMNAS -->
+            <div class="columns">
+
+
+                <!-- ORDENES -->
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Órdenes recientes</h3>
+                            <span>Últimos movimientos</span>
+                        </div>
+
+                        <a href="#ordenes">
+                            Ver todas
+                        </a>
+
+                    </div>
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Orden</th>
+                                <th>Cliente</th>
+                                <th>Estado</th>
+                                <th>Entrega</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#ORD-1024</td>
+                                <td>María López</td>
+                                <td>
+                                    <label class="badge orange">
+                                        En producción
+                                    </label>
+                                </td>
+                                <td>10 Oct</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>#ORD-1023</td>
+                                <td>Carlos Pérez</td>
+                                <td>
+                                    <label class="badge green">
+                                        Lista para entrega
+                                    </label>
+                                </td>
+                                <td>7 Oct</td>
+                            </tr>
+
+
+                            <tr>
+                                <td>#ORD-1022</td>
+                                <td>Laura Gómez</td>
+                                <td>
+                                    <label class="badge blue">
+                                        Laboratorio
+                                    </label>
+                                </td>
+                                <td>11 Oct</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- CITAS -->
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Próximas citas</h3>
+                            <span>Agenda de hoy</span>
+                        </div>
+
+                        <a href="#citas">
+                            Ver agenda
+                        </a>
+
+                    </div>
+
+
+                    <div class="appointment">
+
+                        <div class="date">
+                            <strong>07</strong>
+                            <span>OCT</span>
+                        </div>
+
+                        <div class="appointment-info">
+
+                            <strong>
+                                Juan Rodríguez
+                            </strong>
+
+                            <span>
+                                Consulta optométrica · 3:00 PM
+                            </span>
+
+                        </div>
+
+                        <label class="badge">
+                            Pendiente
+                        </label>
+
+                    </div>
+
+
+                    <div class="appointment">
+
+                        <div class="date">
+                            <strong>07</strong>
+                            <span>OCT</span>
+                        </div>
+
+                        <div class="appointment-info">
+
+                            <strong>
+                                Sofía Martínez
+                            </strong>
+
+                            <span>
+                                Control visual · 4:30 PM
+                            </span>
+
+                        </div>
+
+                        <label class="badge green">
+                            Confirmada
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STOCK -->
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>
+                            Productos con stock bajo
+                        </h3>
+
+                        <span>
+                            Productos por revisar
+                        </span>
+                    </div>
+
+                    <a href="#inventario">
+                        Ir a inventario
+                    </a>
+
+                </div>
+
+
+                <div class="product">
+
+                    <div class="product-icon">
+                        👓
+                    </div>
+
+                    <div>
+                        <strong>
+                            Montura Ray-Ban RB5228
+                        </strong>
+
+                        <span>
+                            Monturas · Código MRB-028
+                        </span>
+                    </div>
+
+                    <b>
+                        2 unidades
+                    </b>
+
+                </div>
+
+
+                <div class="product">
+
+                    <div class="product-icon">
+                        🔎
+                    </div>
+
+                    <div>
+                        <strong>
+                            Lente antirreflejo 1.56
+                        </strong>
+
+                        <span>
+                            Lentes · Código LA-156
+                        </span>
+                    </div>
+
+                    <b>
+                        3 unidades
+                    </b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="clientes" class="section">
+
+    <div class="section-header">
+        <div>
+            <h1>Clientes</h1>
+            <p>Gestiona los clientes de la óptica</p>
+        </div>
+
+        <button class="btn-primary" onclick="abrirModalCliente()">
+            + Agregar cliente
+        </button>
+    </div>
+
+    <div class="card">
+
+        <div class="table-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Nombre</th>
+                        <th>Fecha nacimiento</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Fecha registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaClientes">
+                    <tr>
+                        <td colspan="7" style="text-align:center;">
+                            Cargando clientes...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODAL CLIENTE -->
+
+<div id="modalCliente" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2 id="tituloModalCliente">
+                Agregar cliente
+            </h2>
+
+            <button
+                class="modal-close"
+                onclick="cerrarModalCliente()">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="formCliente">
+
+            <input
+                type="hidden"
+                id="clienteId"
+            >
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Documento *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="documento"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nombre completo *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Fecha de nacimiento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaNacimiento"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="text"
+                        id="telefono"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="direccion"
+                    >
+
+                </div>
+
+
+                <div class="form-group form-full">
+
+                    <label>
+                        Observaciones
+                    </label>
+
+                    <textarea
+                        id="observaciones"
+                        rows="4">
+                    </textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn-secondary"
+                    onclick="cerrarModalCliente()">
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary">
+
+                    Guardar cliente
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+        <!-- PRODUCTOS -->
+        <section id="productos" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Productos</h2>
+                </div>
+
+                <button class="btn-primary">
+                    + Nuevo producto
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Catálogo de monturas, lentes y accesorios.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VENTAS -->
+        <section id="ventas" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Ventas</h2>
+                </div>
+
+                <button class="btn-primary">
+                    + Nueva venta
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Registro de ventas y productos vendidos.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDENES -->
+        <section id="ordenes" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Órdenes de lentes</h2>
+
+                </div>
+
+                <button class="btn-primary">
+                    + Nueva orden
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Orden creada → Laboratorio →
+                    Producción → Recibida →
+                    Control de calidad →
+                    Lista para entrega → Entregada.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVENTARIO -->
+        <section id="inventario" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Inventario</h2>
+
+                </div>
+
+                <button class="btn-primary">
+                    + Movimiento
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Entradas, salidas, ajustes y alertas
+                    de stock.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CITAS -->
+        <section id="citas" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Citas</h2>
+
+                </div>
+
+                <button class="btn-primary">
+                    + Nueva cita
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Agenda de clientes y profesionales.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROVEEDORES -->
+        <section id="proveedores" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Proveedores</h2>
+
+                </div>
+
+                <button class="btn-primary">
+                    + Nuevo proveedor
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Información de proveedores,
+                    NIT y datos de contacto.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORIAS -->
+        <section id="historias" class="module">
+
+            <div class="module-header">
+
+                <div>
+                    <span class="mini-title">
+                        MÓDULO
+                    </span>
+
+                    <h2>Historias ópticas</h2>
+
+                </div>
+
+                <button class="btn-primary">
+                    + Nueva historia
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <p>
+                    Historias optométricas, fórmulas,
+                    agudeza visual, DP, altura y
+                    recomendaciones.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+ <script src="app.js"></script>
+</body>
+</html>
